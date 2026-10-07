@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nook &amp; Co. — Home Goods</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="promo" id="promo">
+    <span id="promo-text">⚡ Flash sale — use code <b>SAVE10</b> for 10% off. Ends in <span id="countdown">--:--</span></span>
+  </div>
+
+  <header class="header">
+    <div class="logo">Nook &amp; Co.</div>
+    <input id="search" type="search" placeholder="Search products…" autocomplete="off">
+    <a class="tickets-link" href="tickets.html" target="_blank" rel="noopener">📋 Support tickets</a>
+    <div class="cart-badge">🛒 <span id="cart-count">0</span></div>
+  </header>
+
+  <main class="layout">
+    <section class="catalog">
+      <div class="toolbar">
+        <span id="results-info" class="muted"></span>
+        <label>Sort
+          <select id="sort">
+            <option value="featured">Featured</option>
+            <option value="price-asc">Price: low to high</option>
+            <option value="price-desc">Price: high to low</option>
+            <option value="rating">Top rated</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="grid" class="grid"></div>
+
+      <nav class="pager">
+        <button id="prev">← Prev</button>
+        <span id="page-label"></span>
+        <button id="next">Next →</button>
+      </nav>
+    </section>
+
+    <aside class="cart">
+      <h2>Your cart</h2>
+      <ul id="cart-list" class="cart-list"></ul>
+      <dl class="totals">
+        <dt>Subtotal</dt><dd id="subtotal">$0</dd>
+        <dt>Discount</dt><dd id="discount">—</dd>
+        <dt class="grand">Total</dt><dd id="total" class="grand">$0.00</dd>
+      </dl>
+      <form id="coupon-form" class="coupon">
+        <input id="coupon" placeholder="Discount code" autocomplete="off">
+        <button type="submit">Apply</button>
+      </form>
+      <p id="coupon-msg" class="muted small"></p>
+      <button class="checkout">Checkout</button>
+    </aside>
+  </main>
+
+  <div id="modal" class="modal" hidden>
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button id="modal-close" class="close" aria-label="Close">×</button>
+      <div id="modal-emoji" class="modal-emoji"></div>
+      <h2 id="modal-title"></h2>
+      <p id="modal-desc"></p>
+      <p><span id="modal-price" class="price"></span></p>
+      <p id="modal-delivery" class="muted small"></p>
+      <button id="modal-add" class="add">Add to cart</button>
+      <h3>Reviews</h3>
+      <ul id="reviews" class="reviews"></ul>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
